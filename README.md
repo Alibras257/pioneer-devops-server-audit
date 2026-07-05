@@ -2,91 +2,79 @@
 
 ## Overview
 
-This project automates daily Linux server health checks using Bash scripting.
+This project demonstrates Linux automation using Bash scripting.
 
-The script collects:
+The script automatically collects key server health metrics and generates a timestamped audit report.
+
+## Features
 
 - Hostname
 - Current User
+- Operating System
+- Kernel Version
 - System Uptime
 - Memory Usage
 - Disk Usage
-
-It also checks disk utilization against a configurable threshold and generates a daily audit report.
-
----
+- Filesystem Summary
+- Disk Usage Warning
+- Automatic Report Generation
 
 ## Project Structure
 
 ```
-scripts/
-reports/
-screenshots/
-docs/
+pioneer-devops-server-audit/
+│
+├── README.md
+├── docs/
+│   └── script_explanation.md
+├── reports/
+├── screenshots/
+└── scripts/
+    └── daily_server_audit.sh
 ```
-
----
 
 ## Requirements
 
-- Linux
+- Ubuntu Linux / WSL
 - Bash
 - awk
 - df
 - free
 - uptime
 
----
-
-## Running the Script
-
-Navigate into the scripts directory.
+## Make Executable
 
 ```bash
-cd scripts
+chmod +x scripts/daily_server_audit.sh
 ```
 
-Make the script executable.
+## Run
 
 ```bash
-chmod +x daily_server_audit.sh
+./scripts/daily_server_audit.sh
 ```
 
-Run the script.
+## Output
 
-```bash
-./daily_server_audit.sh
-```
-
-The generated report will be stored in:
+Reports are automatically generated inside:
 
 ```
 reports/
 ```
 
----
-
-## Sample Output
+Example:
 
 ```
-=========================================
-DAILY SERVER AUDIT REPORT
-=========================================
-
-Hostname: ubuntu-server
-Memory Usage: 1.3Gi / 3.8Gi
-Disk Usage: 41%
-
-Disk usage is within acceptable limits.
+reports/server_audit_2026-07-05_20-15-31.txt
 ```
 
----
+## Bash Concepts Demonstrated
 
-## Learning Objectives
-
-- Bash scripting
 - Variables
 - Command substitution
 - Conditional statements
+- Loops
 - File redirection
-- Linux system monitoring
+- Functions
+- Linux monitoring commands
+- Error handling

@@ -1,17 +1,72 @@
-# Script Explanation
+# Daily Server Audit Script Documentation
 
 ## Purpose
 
-The Daily Server Audit Script automates the collection of important Linux server health information.
-
----
+The script automates the collection of key Linux server health metrics and writes the results into a report.
 
 ## Variables
 
-Variables store values that are reused throughout the script.
+Variables are used to store values for reuse.
+
+Example:
+
+```bash
+DATE=$(date)
+```
+
+Stores the current date.
+
+## Command Substitution
+
+Command substitution captures the output of a command.
 
 Example:
 
 ```bash
 HOSTNAME=$(hostname)
 ```
+
+The output of `hostname` becomes the value of `HOSTNAME`.
+
+## Commands Used
+
+| Command | Purpose |
+|----------|---------|
+| hostname | Display system hostname |
+| whoami | Display current user |
+| uptime | Display system uptime |
+| free | Display memory usage |
+| df | Display disk usage |
+| awk | Extract command output |
+| date | Current date and time |
+| uname | Kernel information |
+| grep | Read OS information |
+
+## Conditional Logic
+
+The script checks whether disk usage exceeds 80%.
+
+```bash
+if [ "$DISK_USAGE" -ge "$DISK_THRESHOLD" ]; then
+```
+
+If true, a warning is printed.
+
+## Output Redirection
+
+The report is written to a file using:
+
+```bash
+} > "$REPORT_FILE"
+```
+
+## Learning Outcomes
+
+- Bash scripting
+- Linux monitoring
+- Automation
+- Variables
+- Command substitution
+- Conditional statements
+- File redirection
+- Error handling
