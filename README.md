@@ -77,4 +77,8 @@ reports/server_audit_2026-07-05_20-15-31.txt
 - File redirection
 - Functions
 - Linux monitoring commands
+<<<<<<< HEAD
 - Error handling
+=======
+- Error handling
+>>>>>>> 6663398 (Updated README file)

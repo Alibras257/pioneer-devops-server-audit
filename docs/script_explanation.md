@@ -69,4 +69,8 @@ The report is written to a file using:
 - Command substitution
 - Conditional statements
 - File redirection
+<<<<<<< HEAD
 - Error handling
+=======
+- Error handling
+>>>>>>> 6663398 (Updated README file)
